@@ -12,6 +12,8 @@ import { NovenyekComponent } from './Part/novenyek/novenyek.component';
 import { UjNovenyComponent } from './Part/uj-noveny/uj-noveny.component';
 import { RendelesComponent } from './Part/rendeles/rendeles.component';
 import { NavComponent } from './Part/nav/nav.component';
+import { FilterPipe } from './Pipe/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,16 @@ import { NavComponent } from './Part/nav/nav.component';
     NovenyekComponent,
     UjNovenyComponent,
     RendelesComponent,
-    NavComponent
+    NavComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     AngularFireModule.initializeApp(Environments.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

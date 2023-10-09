@@ -15,4 +15,20 @@ export class BaseService {
   getPlants(){
     return this.refNovenyek
   }
+
+  newPlant(body:any){
+    // console.log("key", body.key)
+    // console.log("bkey", Boolean(body.key))
+
+    if (body.key) return this.refNovenyek.update(body.key,body)
+    return this.refNovenyek.push(body)
+  }
+
+  deletePlant(body:any){
+    return this.refNovenyek.remove(body.key)
+  }
+
+  updatePlant(body:any){
+    return this.refNovenyek.update(body.key,body)
+  }
 }

@@ -1,1 +1,23 @@
-<p>uj-noveny works!</p>
+{{noveny|json}}
+<div class="card">
+
+<div class="form-floating my-3">
+    <input [(ngModel)]="noveny.megnevezes" type="text" class="form-control" id="floatingInput">
+    <label for="floatingInput">Megnevezés</label>
+</div>
+
+<img *ngIf="noveny.kepUrl" [src]="noveny.kepUrl" class="mg-thumbnail" alt="noveny">
+<div class="form-floating my-3">
+    <input [(ngModel)]="noveny.kepUrl" type="text" class="form-control" id="floatingInput">
+    <label for="floatingInput">Kép(url):</label>
+</div>
+<div class="form-floating">
+    <textarea [(ngModel)]="noveny.leiras" class="form-control" placeholder="Leírás" id="floatingTextarea"></textarea>
+    <label for="floatingTextarea">Leírás</label>
+  </div>
+<div class="form-floating my-3">
+    <input [(ngModel)]="noveny.ar" type="text" class="form-control" id="floatingInput">
+    <label for="floatingInput">Kép(url):</label>
+</div>
+<button (click)="ujNoveny()" type="button" class="btn btn-primary my-3">Ment</button>
+</div>

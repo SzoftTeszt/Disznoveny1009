@@ -2,8 +2,13 @@
 
 <h1 class="display-1 my-3 pb-5">Disznövények</h1>
 
+<div class="form-floating mb-3">
+    <input [(ngModel)]="szo" type="text" class="form-control" id="floatingInput">
+    <label for="floatingInput">Keresés:</label>
+</div>
+
 <div class="row g-4">
-    <div *ngFor="let noveny of novenyek" class=" col-12 col-md-6 col-lg-4 col-xl-3">
+    <div *ngFor="let noveny of novenyek|filter:szo" class=" col-12 col-md-6 col-lg-4 col-xl-3">
 
         <div class="card h-100">
             <img [src]="noveny.kepUrl" class="card-img-top" [alt]="noveny.megnevezes">
@@ -13,6 +18,8 @@
                 {{noveny.leiras}}
               </p>
             </div>
+            <button (click)="torol(noveny)" type="button" class="btn btn-primary my-3">Töröl</button>
+            <button (click)="modosit(noveny)" type="button" class="btn btn-primary my-3">Módosít</button>
             <div class="card-footer">
               <small class="text-muted">{{noveny.ar}} Ft</small>
             </div>
