@@ -1,0 +1,23 @@
+<!-- {{novenyek|json}} -->
+
+<h1 class="display-1 my-3 pb-5">Disznövények</h1>
+
+<div class="row g-4">
+    <div *ngFor="let noveny of novenyek" class=" col-12 col-md-6 col-lg-4 col-xl-3">
+
+        <div class="card h-100">
+            <img [src]="noveny.kepUrl" class="card-img-top" [alt]="noveny.megnevezes">
+            <div class="card-body">
+              <h5 class="card-title">{{noveny.megnevezes}}</h5>
+              <p class="card-text">
+                {{noveny.leiras}}
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">{{noveny.ar}} Ft</small>
+            </div>
+          </div>
+
+
+    </div>
+</div>
