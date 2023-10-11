@@ -20,8 +20,22 @@
             </div>
             <button (click)="torol(noveny)" type="button" class="btn btn-primary my-3">Töröl</button>
             <button (click)="modosit(noveny)" type="button" class="btn btn-primary my-3">Módosít</button>
-            <div class="card-footer">
-              <small class="text-muted">{{noveny.ar}} Ft</small>
+            <div class="card-footer" [ngClass]="!megrendeltE(noveny.key)?'':'bg-success'">
+              <!-- <small class="text-muted"> -->
+                <p>{{noveny.ar}} Ft/db</p>
+                <form class="form-floating">
+                  <div class="row">
+                    <div class="col-4">
+                      <input #db type="number" class="form-control" id="db" placeholder="1" value="1" min="0">
+                    </div>
+                    <div class="col-8 text-center">
+                      <button (click)="rendelTetel(noveny,db.value)" type="button" class="btn btn-primary">
+                        {{!megrendeltE(noveny.key)?'Megrendelem':"Módosítom"}}
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              <!-- </small> -->
             </div>
           </div>
 
